@@ -13,6 +13,9 @@
         NSLog(@"Image absolute path: %@", imgAbsolutePath);
 
 	    UIImage *image = [UIImage imageWithContentsOfFile:imgAbsolutePath];
+
+      UISaveVideoAtPathToSavedPhotosAlbum(imgAbsolutePath,self,nil,nil);
+
 	    UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didFinishSavingWithError:contextInfo:), nil);
 	}];
 }
